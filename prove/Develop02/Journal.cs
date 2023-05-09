@@ -17,7 +17,7 @@ public class Journal
     Console.WriteLine(_prompt.GetRandomPrompt());
     string userInput = Console.ReadLine();
 
-    _entries.Add($"{userInput}");
+    // _entries.Add($"{userInput}");
   }
   public void ShowAllEntries()
   {

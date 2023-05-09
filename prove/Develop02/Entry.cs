@@ -9,7 +9,7 @@ public class Entry
   public Entry(Prompt prompt)
   {
     _prompt = prompt;
-    prompt.DisplayPrompt(prompt.GetRandomPrompt());
+    // prompt.DisplayPrompt(prompt.GetRandomPrompt());
   }
   
   public void Display()
