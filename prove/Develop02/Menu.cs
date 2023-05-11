@@ -32,7 +32,7 @@ public class Menu
           break;
         case "S":
           //Save journal
-          _journal.SaveFile();
+          // _journal.SaveFile();
           break;
         case "L":
           //Load Journal

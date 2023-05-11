@@ -10,7 +10,7 @@ public class Journal
   }
   public void SaveFile(List<Entry> _entries)
   {
-    string filename = "entry.txt";
+    // string filename = "entry.txt";
 
   }
   public void LoadFile()
