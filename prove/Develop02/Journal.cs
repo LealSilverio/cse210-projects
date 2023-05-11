@@ -8,16 +8,21 @@ public class Journal
   {
 
   }
-  public void SaveAndLoad()
+  public void SaveFile(List<Entry> _entries)
   {
+    string filename = "entry.txt";
 
+  }
+  public void LoadFile()
+  {
+    
   }
   public void NewEntry()
   {
     Console.WriteLine(_prompt.GetRandomPrompt());
     string userInput = Console.ReadLine();
 
-    // _entries.Add($"{userInput}");
+    Console.Write(userInput);
   }
   public void ShowAllEntries()
   {

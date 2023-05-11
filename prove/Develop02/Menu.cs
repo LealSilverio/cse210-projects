@@ -2,6 +2,7 @@ public class Menu
 {
 
   public Journal _journal;
+  public Entry _entry;
 
   public void Display()
   {
@@ -22,6 +23,7 @@ public class Menu
           break;
         case "N":
           // New Entry
+          Console.WriteLine("Enter Date: ");
           _journal.NewEntry();
           break;
         case "D":
@@ -30,11 +32,12 @@ public class Menu
           break;
         case "S":
           //Save journal
-          _journal.SaveAndLoad();
+          _journal.SaveFile();
           break;
         case "L":
           //Load Journal
-          _journal.SaveAndLoad();
+          Console.Write("Enter file name: ");
+          _journal.LoadFile();
           break;
       }
       response= "";
