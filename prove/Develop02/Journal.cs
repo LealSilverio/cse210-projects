@@ -3,19 +3,10 @@ public class Journal
   List<Entry> _entries = new List<Entry>();
   public Entry _entry;
   public Prompt _prompt;
-
+  
   public Journal()
   {
 
-  }
-  public void SaveFile(List<Entry> _entries)
-  {
-    // string filename = "entry.txt";
-
-  }
-  public void LoadFile()
-  {
-    
   }
   public void NewEntry()
   {

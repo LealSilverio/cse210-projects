@@ -2,6 +2,7 @@ public class Menu
 {
 
   public Journal _journal;
+  public FileHandler _filehandler;
   public Entry _entry;
 
   public void Display()
@@ -32,12 +33,11 @@ public class Menu
           break;
         case "S":
           //Save journal
-          // _journal.SaveFile();
+          _filehandler.SaveFile();
           break;
         case "L":
-          //Load Journal
-          Console.Write("Enter file name: ");
-          _journal.LoadFile();
+          //Load Journal 
+          _filehandler.LoadFile();
           break;
       }
       response= "";
