@@ -33,11 +33,11 @@ public class Menu
           break;
         case "S":
           //Save journal
-          _filehandler.SaveFile(_entry);
+          // _filehandler.SaveFile(_entry);
           break;
         case "L":
           //Load Journal 
-          _filehandler.LoadFile();
+          // _filehandler.LoadFile();
           break;
       }
       response= "";
