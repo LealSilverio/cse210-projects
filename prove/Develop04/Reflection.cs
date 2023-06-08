@@ -1,16 +1,17 @@
 public class Reflection : Activity
 {
-    public Reflection(string name, string description, int seconds) : base(name, description, seconds)
+    public Reflection()
+    {
+        _name = "Reflecting";
+        _description = "This activity will help you reflect on times in your life when you have shown strengh and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    }
+    public void GetPrompt(List<string> list)
     {
 
     }
-    public void GetPrompt()
+    public override void Display()
     {
-
-    }
-
-    override public void Display()
-    {
-        
+        base.Display();
+        DisplayEndMessage();
     }
 }

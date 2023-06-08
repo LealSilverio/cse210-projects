@@ -1,16 +1,23 @@
 public class Breathing : Activity
 {
-    public Breathing(string name, string description, int seconds) : base(name, description, seconds)
+    public Breathing()
     {
-
+        _name = "Breathing";
+        _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
-    public string BreathMessage()
+    public void BreathMessage()
     {
-        return " ";
+        Console.Write($"Breathe in...");
+        Countdown();
+        Console.WriteLine(string.Empty);
+        Console.Write($"Now breathe out...");
+        Countdown();
+        Console.WriteLine(string.Empty);
     }
-
-    override public void Display()
+    public override void Display()
     {
-        
+        base.Display();
+        BreathMessage();
+        DisplayEndMessage();
     }
 }
