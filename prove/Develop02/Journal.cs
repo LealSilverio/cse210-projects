@@ -1,20 +1,22 @@
 public class Journal
 {
   List<Entry> _entries = new List<Entry>();
-  public Prompt _prompt = new Prompt();
+  
+  public void LoadEntries(List<Entry> entries)
+  {
+    _entries = entries;
+  }
+  public List<Entry> GetEntries()
+  {
+    return _entries;
+  }
   
   public void NewEntry()
   {
-    Console.WriteLine(_prompt.GetRandomPrompt());
-    string userInput = Console.ReadLine();
-    AddEntry();
-    // Console.Write(userInput);
-  }
-  public void AddEntry()
-  {
     Entry _entry = new Entry();
+    _entry.NewEntry();
     _entries.Add(_entry);
-    Console.WriteLine("Entry added");
+    Console.WriteLine("\nEntry added");
   }
   public void ShowAllEntries()
   { 

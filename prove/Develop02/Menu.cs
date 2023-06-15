@@ -32,13 +32,14 @@ public class Menu
           break;
         case "S":
           //Save journal
-          // _fileHandler.SaveFile(_entry);
-          Console.WriteLine("case s");
+          _fileHandler.WriteFile(_journal.GetEntries());
+          Console.WriteLine("Saved");
           break;
         case "L":
           //Load Journal 
-          // _fileHandler.LoadFile();
-          Console.WriteLine("case l");
+          List<Entry> entries = _fileHandler.ReadFromFile();
+          _journal.LoadEntries(entries);
+          Console.WriteLine("Loaded");
           break;
       }
       response= "";
