@@ -30,9 +30,9 @@ public class Prompt
   public void AddPrompts()
   {
     _prompts.Add("What was the best moment of your day?");
-    _prompts.Add("What was something confusing that happened today??");
+    _prompts.Add("What was something confusing that happened today?");
     _prompts.Add("How did you see the hand of the Lord today?");
     _prompts.Add("What was the strongest emotion you felt today?");
-    _prompts.Add("What is something you want to do?");
+    _prompts.Add("What would you want to do right now if you could do anything?");
   }
 }

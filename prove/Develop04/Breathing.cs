@@ -7,12 +7,19 @@ public class Breathing : Activity
     }
     public void BreathMessage()
     {
-        Console.Write($"Breathe in...");
-        Countdown();
-        Console.WriteLine(string.Empty);
-        Console.Write($"Now breathe out...");
-        Countdown();
-        Console.WriteLine(string.Empty);
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_seconds);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < futureTime)
+        {
+            Console.WriteLine(string.Empty);
+            Console.Write($"Breathe in...");
+            numberCountdown();
+            Console.WriteLine(string.Empty);
+            Console.Write($"Now breathe out...");
+            numberCountdown();
+            Console.WriteLine(string.Empty);
+        }
     }
     public override void Display()
     {

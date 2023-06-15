@@ -21,7 +21,7 @@ public class FileHandler
     {
         foreach (Entry _e in _entries)
         {
-          outputFile.WriteLine(_e.Stringfy());
+          outputFile.WriteLine(_e.Stringify());
         }
     }
   }

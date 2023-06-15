@@ -1,9 +1,8 @@
 public class Menu
 {
 
-  public Journal _journal;
-  public FileHandler _filehandler;
-  public Entry _entry;
+  Journal _journal = new Journal();
+  FileHandler _fileHandler = new FileHandler();
 
   public void Display()
   {
@@ -13,7 +12,8 @@ public class Menu
     {
       while(options.Contains(response)==false)
       {
-        Console.Write("[N]ew Entry\n[D]isplay Journal\n[S]ave Journal\n[L]oad File\n[Q]uit\n\nWhat do you want to do? ");
+        Console.WriteLine("\nWelcome to the Journal Program!\nPlease select one of the following choices: ");
+        Console.Write("[N]ew Entry\n[D]isplay Journal\n[S]ave Journal\n[L]oad File\n[Q]uit\n\nWhat do you like to do? ");
         response = Console.ReadLine() ?? String.Empty;
         response = response.ToUpper();
       }
@@ -24,20 +24,21 @@ public class Menu
           break;
         case "N":
           // New Entry
-          Console.WriteLine("Enter Date: ");
           _journal.NewEntry();
           break;
         case "D":
-          //Display Jornal
+          //Display Journal
           _journal.ShowAllEntries();
           break;
         case "S":
           //Save journal
-          // _filehandler.SaveFile(_entry);
+          // _fileHandler.SaveFile(_entry);
+          Console.WriteLine("case s");
           break;
         case "L":
           //Load Journal 
-          // _filehandler.LoadFile();
+          // _fileHandler.LoadFile();
+          Console.WriteLine("case l");
           break;
       }
       response= "";
