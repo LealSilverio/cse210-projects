@@ -24,6 +24,7 @@ public class Listing : Activity
             Console.WriteLine(string.Empty);
             string entry = Console.ReadLine();
             _entries.Add(entry);
+            currentTime = DateTime.Now;
         }
         _entriesCount = _entries.Count();
         Console.Write($"You listed {_entriesCount} items!");

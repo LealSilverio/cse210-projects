@@ -20,6 +20,7 @@ public class Activity
         {
             Console.WriteLine(message);
             Spin();
+            currentTime = DateTime.Now;
         }
         Console.WriteLine(string.Empty);
     }

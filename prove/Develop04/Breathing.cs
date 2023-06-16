@@ -12,13 +12,14 @@ public class Breathing : Activity
         DateTime currentTime = DateTime.Now;
         while (currentTime < futureTime)
         {
-            Console.WriteLine(string.Empty);
             Console.Write($"Breathe in...");
             numberCountdown();
             Console.WriteLine(string.Empty);
             Console.Write($"Now breathe out...");
             numberCountdown();
             Console.WriteLine(string.Empty);
+            Console.WriteLine(string.Empty);
+            currentTime = DateTime.Now;
         }
     }
     public override void Display()

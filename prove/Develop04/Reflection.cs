@@ -42,7 +42,15 @@ public class Reflection : Activity
     }
     public void ReflectionPrompts()
     {
-        Pause(GetRandomFromList(_reflections, _usedReflections));
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_seconds);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < futureTime)
+        {
+            Pause(GetRandomFromList(_reflections, _usedReflections));
+            Thread.Sleep(1000);
+            currentTime = DateTime.Now;
+        }
     }
     public override void Display()
     {
