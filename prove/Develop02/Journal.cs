@@ -20,7 +20,7 @@ public class Journal
   }
   public void ShowAllEntries()
   { 
-    Console.Clear();
+    // Console.Clear();
     foreach (Entry _entry in _entries)
     {
       _entry.Display();

@@ -5,8 +5,6 @@ public class Entry
   private string _text;
   private string _prompt;
   private string _break = "~~";
-  
-
   public Entry()
   {
     _prompt = new Prompt().GetRandomPrompt();
