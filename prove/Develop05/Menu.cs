@@ -5,6 +5,7 @@ public class Menu
     string _goalType;
     int _totalPoints;
     int _score;
+    
     FileHandler f = new FileHandler();
     List<Goal> goals = new List<Goal>();
     public void DisplayMenu()
@@ -45,12 +46,11 @@ public class Menu
                             break;
                     }
                     _goalType = " ";
-                    _userChoice = " ";
                     break;
                 case "2":
-                    int i = 1;
                     foreach (Goal g in goals)
                     {
+                        int i = 1;
                         Console.Write($"{i}. ");
                         g.Display();
                         ++i;
@@ -64,7 +64,17 @@ public class Menu
                     f.Load();
                     break;
                 case "5":
-                    
+                    Console.Write("Which goal did you accomplish? ");
+                    string userInput = Console.ReadLine();
+                    int goalNumber = int.Parse(userInput);
+                    int index = 0 + goalNumber;
+                    foreach (Goal g in goals)
+                    {
+                        if (Equals(index))
+                        {
+                            _isCompleted = true;
+                        }
+                    }
                     break;
                 case "6":
                     Environment.Exit(0);

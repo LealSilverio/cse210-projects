@@ -14,7 +14,7 @@ public class Eternal : Goal
             "EternalGoal",
             _name,
             _description,
-            _points.ToString()
+            _points.ToString(),
         };
         return string.Join(_break, list);
     }

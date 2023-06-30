@@ -14,7 +14,7 @@ public class Entry
   public void NewEntry()
   {
     Console.WriteLine(_prompt);
-    string _text = Console.ReadLine();
+    _text = Console.ReadLine();
   }
   public void EntryList(string[] items)
   {
@@ -24,7 +24,7 @@ public class Entry
   }
   public void Display()
   {
-    Console.WriteLine($"Date: {_date} - {_prompt}\n{_text}");
+    Console.WriteLine($"\nDate: {_date} - {_prompt}\n{_text}");
   }
   public string Stringify()
   {

@@ -32,7 +32,6 @@ public class Challenge : Goal
             _bonusPoints.ToString()
         };
         return string.Join(_break, list);
-
     }
     override public void Display()
     {   
