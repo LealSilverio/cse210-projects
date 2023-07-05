@@ -6,7 +6,7 @@ public class Address
     string _country;
     bool _national;
 
-    public void SetCustomer(string street, string city, string state, string country){
+    public void SetAddress(string street, string city, string state, string country){
         _street = street;
         _city = city;
         _state = state;
@@ -23,7 +23,6 @@ public class Address
         }
         return _national;
     }
-
     public string Stringify()
     {
         return $"{_street}\n{_city}, {_state} {_country}";

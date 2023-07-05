@@ -1,11 +1,9 @@
 public class Order
 {
     string label;
-    string address;
     int _shipping;
     int _total;
     List<Product> _products = new List<Product>();
-    Customer c = new Customer();
 
     public void SetList(List<Product> products)
     {
@@ -15,29 +13,30 @@ public class Order
     {
         return _products;
     }
-    public int calculateTotal()
+    public int calculateTotal(bool nationalShipping, List<int> list)
     {
-        int prices = _products.Count();
-        if (address == "USA")
+        int price = list.Sum();
+        if (nationalShipping == true)
         {
             _shipping = 5;
         }
         else{
             _shipping = 35;
         }
-        _total = prices + _shipping;
+        _total = price + _shipping;
         return _total;
     }
-    public string packingLabel(string name, int id)
+    public void packingLabel()
     {
         foreach (Product p in _products)
         {
-            label = $"{name} - {id}";
+            Console.WriteLine($"Name: {p.GetName()}\nID: {p.GetId()}");
+            Console.WriteLine(string.Empty);
         }
-        return label;
+        
     }
-    public string shippingLabel(string name, string address)
+    public string shippingLabel(Customer c)
     {
-        return $"{name} - {address}";
+        return $"{c.GetName()}\n{c.GetAddress()}";
     }
 }

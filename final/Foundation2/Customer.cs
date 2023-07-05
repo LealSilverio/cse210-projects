@@ -3,18 +3,21 @@ public class Customer
     string _name;
     Address _address = new Address();
 
-    public void SetCustomer(string name, Address address){
+    public void SetCustomer(string name){
         _name = name;
-        _address = address;
     }
     public string GetName(){
         return _name;
     }
-    public Address GetAddress(){
-        return _address;
-    }
-    public void livingInTheUS()
+    public void SetAddress(string street, string city, string state, string country)
     {
-        _address.nationalVSinternational();
+        _address.SetAddress(street, city, state, country);
+    }
+    public string GetAddress(){
+        return _address.Stringify();
+    }
+    public bool livingInTheUS()
+    {
+        return _address.nationalVSinternational();
     }
 }
