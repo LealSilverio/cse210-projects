@@ -7,7 +7,7 @@ public class Scripture
     {
         _ref = reference;
     }
-    public void ConvertStringtoWord()
+    public void ConvertStringToWord()
     {
         foreach (string word in scriptureString.Split(" "))
         {
@@ -20,8 +20,6 @@ public class Scripture
         var random = new Random();
         var randomNumber = random.Next(0,_words.Count);
         var randomWord = _words[randomNumber];
-
-        
     }
     public void Display()
     {

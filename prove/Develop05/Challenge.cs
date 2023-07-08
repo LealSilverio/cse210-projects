@@ -1,15 +1,26 @@
 public class Challenge : Goal
 {
     int _bonusPoints;
-    int _timesAccomplished = 0;
-    int _toAccomplish = 0;
+    int _timesAccomplished;
+    int _toAccomplish;
+    public Challenge()
+    {
+        _type = "Challenge";
+    }
     public override void AddGoal()
     {
-        base.AddGoal();
+         Console.Write("\nWhat is the name of your goal? ");
+        _name = Console.ReadLine();
+        Console.Write("What is a short description of your goal? ");
+        _description = Console.ReadLine();
+        Console.Write("What is the amount of points associated with this goal? ");
+        _points = Console.Read();
         Console.Write("How many times does this goal need to be accomplished for a bonus? ");
         _toAccomplish = Console.Read();
+        Console.WriteLine(_toAccomplish);
         Console.Write("What is the bonus for accomplishing it that many times? ");
         _bonusPoints = Console.Read();
+        Console.WriteLine(_bonusPoints);
     }
     public override void CreateFromList(string[] list){
         _name = list[1];
@@ -32,6 +43,18 @@ public class Challenge : Goal
             _bonusPoints.ToString()
         };
         return string.Join(_break, list);
+    }
+    override public int CompleteGoal()
+    {
+        ++_timesAccomplished;
+        if (_timesAccomplished == _toAccomplish)
+        {
+            Console.WriteLine("You have already accomplished this goal.");
+        }
+        else{
+            Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        }
+        return _points;
     }
     override public void Display()
     {   

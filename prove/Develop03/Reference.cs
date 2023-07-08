@@ -22,7 +22,7 @@ public class Reference
     {
         return $"{_book} {_chapter}:{_startVerse}";
     }
-    public string DispayVerses()
+    public string DisplayVerses()
     {
         return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
     }

@@ -1,7 +1,10 @@
 public class Eternal : Goal
 {
-    List<Eternal> _eternalGoals = new List<Eternal>();
 
+    public Eternal()
+    {
+        _type = "Eternal";
+    }
     public override void CreateFromList(string[] list){
         _name = list[1];
         _description = list[2];
@@ -17,5 +20,10 @@ public class Eternal : Goal
             _points.ToString(),
         };
         return string.Join(_break, list);
+    }
+    override public int CompleteGoal()
+    {
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        return _points;
     }
 }

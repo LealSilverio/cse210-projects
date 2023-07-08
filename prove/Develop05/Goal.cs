@@ -5,6 +5,7 @@ public abstract class Goal
     protected string _description;    
     protected string _break = "~~";
     protected bool _isCompleted;
+    protected string _type;
     string _checkList;
 
     virtual public void AddGoal(){
@@ -15,6 +16,11 @@ public abstract class Goal
         Console.Write("What is the amount of points associated with this goal? ");
         _points = Console.Read();
     }
+    public string GetGoalType()
+    {
+        return _type;
+    }
+    public abstract int CompleteGoal();
     public abstract void CreateFromList(string[] list);
     abstract public string Stringify();
     virtual public void Display()
@@ -27,5 +33,14 @@ public abstract class Goal
             _checkList = "[ ]";
         }
         Console.Write($"{_checkList} {_name} ({_description})");
+    }
+    public string ListItems()
+    {
+        return $"{_name}";
+    }
+    public int CalculatePoints(int totalPoints)
+    {
+        totalPoints = _points + totalPoints; 
+        return totalPoints;
     }
 }

@@ -1,5 +1,9 @@
 public class Simple : Goal
 {
+    public Simple()
+    {
+        _type = "Simple";
+    }
     public override void CreateFromList(string[] list){
         _name = list[1];
         _description = list[2];
@@ -17,5 +21,11 @@ public class Simple : Goal
             _isCompleted.ToString()
         };
         return string.Join(_break, list);
+    }
+    override public int CompleteGoal()
+    {
+        _isCompleted = true;
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        return _points;
     }
 }

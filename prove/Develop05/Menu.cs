@@ -1,13 +1,17 @@
+using System.Linq;
+
 public class Menu
 {
     string _userChoice;
-    bool _isCompleted;
     string _goalType;
     int _totalPoints;
     int _score;
-    
+    int i = 1;
     FileHandler f = new FileHandler();
     List<Goal> goals = new List<Goal>();
+    Simple s = new Simple();
+    Eternal e = new Eternal();
+    Challenge c = new Challenge();
     public void DisplayMenu()
     {
         Console.Write(_userChoice);
@@ -27,19 +31,16 @@ public class Menu
                     switch (_goalType)
                     {
                         case "1":
-                            Simple s = new Simple();
                             s.AddGoal();
                             s.Stringify();
                             goals.Add(s);
                             break;
                         case "2":
-                            Eternal e = new Eternal();
                             e.AddGoal();
                             e.Stringify();
                             goals.Add(e);
                             break;
                         case "3":
-                            Challenge c = new Challenge();
                             c.AddGoal();
                             c.Stringify();
                             goals.Add(c);
@@ -48,9 +49,9 @@ public class Menu
                     _goalType = " ";
                     break;
                 case "2":
+                    i = 1;
                     foreach (Goal g in goals)
                     {
-                        int i = 1;
                         Console.Write($"{i}. ");
                         g.Display();
                         ++i;
@@ -61,19 +62,40 @@ public class Menu
                     f.Save(goals);
                     break;
                 case "4":
-                    f.Load();
+                    f.Load(goals);
                     break;
                 case "5":
-                    Console.Write("Which goal did you accomplish? ");
+                    Console.WriteLine("\nYour goals are: ");
+                    i = 1;
+                    List <string> list = new List<string>();
+                    foreach (Goal g in goals)
+                        {
+                            list.Add(i.ToString());
+                            Console.Write($"{i}. ");
+                            Console.WriteLine(g.ListItems());
+                            ++i;
+                        }
+                    Console.Write("\nWhich goal did you accomplish? ");
                     string userInput = Console.ReadLine();
                     int goalNumber = int.Parse(userInput);
-                    int index = 0 + goalNumber;
-                    foreach (Goal g in goals)
+                    int index = 0 + goalNumber - 1;
+                    if (list[index] == userInput)
                     {
-                        if (Equals(index))
+                        if ( goals[index].GetGoalType() == "Simple")
                         {
-                            _isCompleted = true;
-                        }
+                            s.CompleteGoal();
+                            Console.WriteLine(goals[index].GetGoalType());  
+                        } 
+                        else if ( goals[index].GetGoalType() == "Eternal")
+                        {
+                            e.CompleteGoal();
+                            Console.WriteLine(goals[index].GetGoalType());   
+                        } 
+                        else if ( goals[index].GetGoalType() == "Challenge")
+                        {
+                            c.CompleteGoal();
+                            Console.WriteLine(goals[index].GetGoalType());  
+                        }                 
                     }
                     break;
                 case "6":

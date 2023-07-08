@@ -9,10 +9,11 @@ public class Word
         _word_status = true;
     }
     public string HideWord(){
-        if (_word_status == true){
+        if (_word_status == true)
+        {
             return _word;
-        }
-        else {
+        } else
+        {
             _word = "__";
             return _word;
         }

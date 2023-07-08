@@ -16,11 +16,10 @@ public class FileHandler
         Console.WriteLine("File Saved Successfully");
     }
   }
-  public List<Goal> Load()
+  public List<Goal> Load(List<Goal> goals)
   {
     string filename = PromptFilename();
     string[] lines = System.IO.File.ReadAllLines(filename);
-    List<Goal> goals = new List<Goal>();
     foreach (string line in lines)
     {
       string[] parts = line.Split("~~");
