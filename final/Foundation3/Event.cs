@@ -1,19 +1,41 @@
 public class Event
 {
-    protected string title;
-    protected string eventType;
-    protected string description;
-    protected int date;
-    protected int time;
+    protected string _title;
+    protected string _eventType;
+    protected string _description;
+    protected string _date;
+    protected string _time;
     Address address = new Address();
 
-    public string StandardDetails(){
-        return $"{title} - {description}\n{date} {time}\n{address}";
+    virtual public void SetEvent()
+    {
+        Console.Write("Title: ");
+        _title = Console.ReadLine();
+
+        Console.Write("Description: ");
+        _description = Console.ReadLine();
+
+        Console.Write("Date: ");
+        _date = Console.ReadLine();
+
+        Console.Write("Time: ");
+        _time = Console.ReadLine();
     }
-    virtual public void FullDetails(){
-        Console.WriteLine(StandardDetails());
+    public void SetAddress(string street, string city, string state, string country)
+    {
+        address.SetAddress(street, city, state, country);
     }
-    public string ShortDescription(){
-        return $"{eventType} - {title} - {date}";
+    public string StandardDetails()
+    {
+        return $"{_title} - {_description}\n{_date} {_time}\n{address.Stringify()}";
+    }
+    virtual public string FullDetails()
+    {
+        string normalMessage = StandardDetails();
+        return normalMessage;
+    }
+    public string ShortDescription()
+    {
+        return $"{_eventType} - {_title} - {_date}";
     }
 }
