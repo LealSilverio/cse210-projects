@@ -1,7 +1,7 @@
 public class Cycling : Exercise
 {
-    public override void CalculateDistance()
+    public Cycling()
     {
-        Console.Write(distance);
+        _exerciseType = "Cycling";
     }
 }

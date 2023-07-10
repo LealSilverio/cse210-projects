@@ -1,7 +1,7 @@
 public class Running : Exercise
 {
-    public override void CalculateDistance()
+    public Running()
     {
-        Console.Write(distance);
+        _exerciseType = "Running";
     }
 }
