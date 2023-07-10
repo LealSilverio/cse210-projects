@@ -8,6 +8,15 @@ public class Word
         _word = word;
         _word_status = true;
     }
+    public bool CheckStatus()
+    {
+        return _word_status;
+    }
+    public void ChangeStatus()
+    {
+        _word_status = false;
+        Console.WriteLine(HideWord());
+    }
     public string HideWord(){
         if (_word_status == true)
         {

@@ -17,9 +17,24 @@ public class Scripture
     }
     public void HideRandomWord()
     {
+        
         var random = new Random();
         var randomNumber = random.Next(0,_words.Count);
         var randomWord = _words[randomNumber];
+        int index = randomNumber;
+        if (_words[index] == _words[randomNumber])
+            {
+                Word word = randomWord;
+                if (word.CheckStatus() == true)
+                {
+                    word.ChangeStatus();
+                }
+                else {
+                    randomNumber = random.Next(0,_words.Count);
+                    word = _words[randomNumber];
+                }
+            }
+        Display();
     }
     public void Display()
     {

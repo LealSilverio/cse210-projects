@@ -9,7 +9,8 @@ public class Reference
     {
         _book = book;
         _startVerse = startVerse;
-        _chapter = chapter; 
+        _chapter = chapter;
+        Display(); 
     }
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
@@ -17,10 +18,11 @@ public class Reference
         _startVerse = startVerse;
         _endVerse = endVerse;
         _chapter = chapter; 
+        DisplayVerses();
     }
     public string Display()
     {
-        return $"{_book} {_chapter}:{_startVerse}";
+        return $"{_book} {_chapter}:{_startVerse} - ";
     }
     public string DisplayVerses()
     {
