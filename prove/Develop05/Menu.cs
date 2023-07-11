@@ -79,23 +79,30 @@ public class Menu
                     string userInput = Console.ReadLine();
                     int goalNumber = int.Parse(userInput);
                     int index = 0 + goalNumber - 1;
-                    if (list[index] == userInput)
+                    foreach (Goal g in goals)
                     {
-                        if ( goals[index].GetGoalType() == "Simple")
+                        if (list[index] == userInput)
                         {
-                            s.CompleteGoal();
-                            Console.WriteLine(goals[index].GetGoalType());  
-                        } 
-                        else if ( goals[index].GetGoalType() == "Eternal")
-                        {
-                            e.CompleteGoal();
-                            Console.WriteLine(goals[index].GetGoalType());   
-                        } 
-                        else if ( goals[index].GetGoalType() == "Challenge")
-                        {
-                            c.CompleteGoal();
-                            Console.WriteLine(goals[index].GetGoalType());  
-                        }                 
+                            if (goals[index].CheckCompletion() == false)
+                            {
+                                g.CompleteGoal();
+                            // } 
+                            // else if (goals[index].CheckCompletion() == false)
+                            // {
+                                // if ( goals[index].GetGoalType() == "Simple")
+                                // {
+                                    
+                                // } 
+                                // else if ( goals[index].GetGoalType() == "Eternal")
+                                // {
+                                //     g.CompleteGoal();
+                                // }    
+                                // else if ( goals[index].GetGoalType() == "Challenge")
+                                // {
+                                //     g.CompleteGoal();
+                                // }    
+                            }                 
+                        }
                     }
                     break;
                 case "6":

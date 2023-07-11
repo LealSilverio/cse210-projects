@@ -49,7 +49,9 @@ public class Challenge : Goal
         ++_timesAccomplished;
         if (_timesAccomplished == _toAccomplish)
         {
-            Console.WriteLine("You have already accomplished this goal.");
+            _isCompleted = true;
+            Console.WriteLine("You got extra points! Nice!");
+            return _bonusPoints;
         }
         else{
             Console.WriteLine($"Congratulations! You have earned {_points} points!");

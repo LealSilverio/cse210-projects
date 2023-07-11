@@ -23,6 +23,7 @@ public class Eternal : Goal
     }
     override public int CompleteGoal()
     {
+        _isCompleted = true;
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
         return _points;
     }

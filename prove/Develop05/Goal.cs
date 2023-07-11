@@ -21,6 +21,10 @@ public abstract class Goal
         return _type;
     }
     public abstract int CompleteGoal();
+    public bool CheckCompletion()
+    {
+        return _isCompleted;
+    }
     public abstract void CreateFromList(string[] list);
     abstract public string Stringify();
     virtual public void Display()
