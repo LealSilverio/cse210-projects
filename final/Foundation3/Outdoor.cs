@@ -8,7 +8,6 @@ public class Outdoor : Event
     public override void SetEvent()
     {
         base.SetEvent();
-        CheckWeather();
     }
     public string CheckWeather()
     {
@@ -29,7 +28,7 @@ public class Outdoor : Event
     override public string FullDetails()
     {
         string normalMessage = StandardDetails();
-        string fullMessage = normalMessage + $"\n{_eventType} - {weather}";
+        string fullMessage = normalMessage + $"\n{_eventType} - {CheckWeather()}";
         return fullMessage;
     }
 }

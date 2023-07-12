@@ -10,7 +10,7 @@ public class Swimming : Exercise
         Console.Write("How many laps? ");
         string input = Console.ReadLine();
         numberOfLaps = int.Parse(input);
-        _distance = numberOfLaps * 50 / 1000;
+        _distance = (numberOfLaps * 50.0) / 1000;
         return _distance;
     }
 }
