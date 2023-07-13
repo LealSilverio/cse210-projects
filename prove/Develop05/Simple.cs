@@ -22,10 +22,10 @@ public class Simple : Goal
         };
         return string.Join(_break, list);
     }
-    override public int CompleteGoal()
+    override public void CompleteGoal()
     {
         _isCompleted = true;
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
-        return _points;
+        SetPoints(_points);
     }
 }

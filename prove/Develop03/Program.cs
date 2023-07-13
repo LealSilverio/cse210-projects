@@ -14,7 +14,7 @@ class Program
         var response = Console.ReadLine();
         while (response != "quit") { 
             Console.Clear();
-            if (Console.ReadKey().Key == ConsoleKey.Enter)
+            if (response == string.Empty)
             {
                 Console.Write(reference.Display());
                 scripture.HideRandomWord();

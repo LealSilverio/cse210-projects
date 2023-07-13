@@ -4,8 +4,7 @@ public class Menu
 {
     string _userChoice;
     string _goalType;
-    int _totalPoints;
-    int _score;
+    int score;
     int i = 1;
     FileHandler f = new FileHandler();
     List<Goal> goals = new List<Goal>();
@@ -20,7 +19,7 @@ public class Menu
     {   
         while(options.Contains(_userChoice) == false)
         {
-            Console.WriteLine($"\nYou have {_totalPoints} points.\n");
+            Console.WriteLine($"\nYou have {score} points.\n");
             Console.Write("Menu Options:\n\t1. Create New Goal\n\t2. List Goals\n\t3. Save Goals\n\t4. Load Goals\n\t5. Record Event\n\t6. Quit\nSelect a choice from the Menu: ");
             _userChoice = Console.ReadLine() ?? String.Empty;
             switch (_userChoice)
@@ -41,6 +40,7 @@ public class Menu
                             goals.Add(e);
                             break;
                         case "3":
+                            c = new Challenge();
                             c.AddGoal();
                             c.Stringify();
                             goals.Add(c);
@@ -79,29 +79,24 @@ public class Menu
                     string userInput = Console.ReadLine();
                     int goalNumber = int.Parse(userInput);
                     int index = 0 + goalNumber - 1;
-                    foreach (Goal g in goals)
+                    foreach (string l in list)
                     {
-                        if (list[index] == userInput)
+                        if (l == userInput)
                         {
-                            if (goals[index].CheckCompletion() == false)
+                            foreach (Goal g in goals)
                             {
-                                g.CompleteGoal();
-                            // } 
-                            // else if (goals[index].CheckCompletion() == false)
-                            // {
-                                // if ( goals[index].GetGoalType() == "Simple")
-                                // {
-                                    
-                                // } 
-                                // else if ( goals[index].GetGoalType() == "Eternal")
-                                // {
-                                //     g.CompleteGoal();
-                                // }    
-                                // else if ( goals[index].GetGoalType() == "Challenge")
-                                // {
-                                //     g.CompleteGoal();
-                                // }    
-                            }                 
+                                if (goals[index].GetGoalType() == g.GetGoalType())
+                                {
+                                    if (goals[index].CheckCompletion() == false)
+                                    {
+                                        g.CompleteGoal();
+                                        score = score + g.GetPoints();
+                                    }
+                                }
+                                else {
+                                    continue;
+                                }
+                            }
                         }
                     }
                     break;
@@ -112,4 +107,5 @@ public class Menu
             _userChoice = " ";
         }
     }}
+    
 }

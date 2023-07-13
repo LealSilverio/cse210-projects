@@ -1,3 +1,3 @@
-SimpleGoal~~wash clothes~~sort, wash, and put away my clothes~~53~~False
-EternalGoal~~breathe~~take a breath~~54
-ChallengeGoal~~eat three meals a day~~have 3 healthy meals today~~50~~0~~3~~100
+SimpleGoal~~eat lunch~~eat food~~80~~False
+EternalGoal~~breath~~I need O2~~10
+ChallengeGoal~~drink water~~drink 8 glasses of water~~30~~0~~8~~100

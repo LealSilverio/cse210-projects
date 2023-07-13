@@ -43,6 +43,7 @@ public class FileHandler
       } 
     }
     Console.WriteLine("File Loaded Successfully");
+    CalculateTotalPoints(goals);
     return goals;
   }
   public string PromptFilename()
@@ -55,4 +56,13 @@ public class FileHandler
     }
     return filename;
   }
+  public int CalculateTotalPoints(List<Goal> goals)
+    {
+        int _totalPoints = 0;   
+        foreach (Goal g in goals)
+        {
+            _totalPoints = _totalPoints + g.GetPoints();
+        }
+        return _totalPoints;
+    }
 }
